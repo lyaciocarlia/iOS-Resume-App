@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		19A3453929813D32005F37B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A3453829813D32005F37B0 /* AppDelegate.swift */; };
 		19A3453B29813D32005F37B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A3453A29813D32005F37B0 /* SceneDelegate.swift */; };
-		19A3453D29813D32005F37B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A3453C29813D32005F37B0 /* ViewController.swift */; };
 		19A3454029813D32005F37B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A3453E29813D32005F37B0 /* Main.storyboard */; };
 		19A3454229813D34005F37B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A3454129813D34005F37B0 /* Assets.xcassets */; };
 		19A3454529813D34005F37B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A3454329813D34005F37B0 /* LaunchScreen.storyboard */; };
+		19A345572981404A005F37B0 /* github.json in Resources */ = {isa = PBXBuildFile; fileRef = 19A345502981404A005F37B0 /* github.json */; };
+		19A345582981404A005F37B0 /* closebutton.json in Resources */ = {isa = PBXBuildFile; fileRef = 19A345512981404A005F37B0 /* closebutton.json */; };
+		19A345592981404A005F37B0 /* swiftlogo.json in Resources */ = {isa = PBXBuildFile; fileRef = 19A345522981404A005F37B0 /* swiftlogo.json */; };
+		19A3455A2981404A005F37B0 /* shapes.json in Resources */ = {isa = PBXBuildFile; fileRef = 19A345532981404A005F37B0 /* shapes.json */; };
+		19A3455B2981404A005F37B0 /* download.json in Resources */ = {isa = PBXBuildFile; fileRef = 19A345542981404A005F37B0 /* download.json */; };
+		19A3455C2981404A005F37B0 /* linkedin.json in Resources */ = {isa = PBXBuildFile; fileRef = 19A345552981404A005F37B0 /* linkedin.json */; };
+		19A3455D2981404A005F37B0 /* background.json in Resources */ = {isa = PBXBuildFile; fileRef = 19A345562981404A005F37B0 /* background.json */; };
+		19A3455F2981409D005F37B0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A3455E2981409D005F37B0 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		19A3453529813D32005F37B0 /* iOSResumeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSResumeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A3453829813D32005F37B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19A3453A29813D32005F37B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		19A3453C29813D32005F37B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		19A3453F29813D32005F37B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		19A3454129813D34005F37B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19A3454429813D34005F37B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19A3454629813D34005F37B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19A345502981404A005F37B0 /* github.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = github.json; sourceTree = "<group>"; };
+		19A345512981404A005F37B0 /* closebutton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = closebutton.json; sourceTree = "<group>"; };
+		19A345522981404A005F37B0 /* swiftlogo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swiftlogo.json; sourceTree = "<group>"; };
+		19A345532981404A005F37B0 /* shapes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shapes.json; sourceTree = "<group>"; };
+		19A345542981404A005F37B0 /* download.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = download.json; sourceTree = "<group>"; };
+		19A345552981404A005F37B0 /* linkedin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = linkedin.json; sourceTree = "<group>"; };
+		19A345562981404A005F37B0 /* background.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = background.json; sourceTree = "<group>"; };
+		19A3455E2981409D005F37B0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,54 @@
 		19A3453729813D32005F37B0 /* iOSResumeApp */ = {
 			isa = PBXGroup;
 			children = (
-				19A3453829813D32005F37B0 /* AppDelegate.swift */,
-				19A3453A29813D32005F37B0 /* SceneDelegate.swift */,
-				19A3453C29813D32005F37B0 /* ViewController.swift */,
-				19A3453E29813D32005F37B0 /* Main.storyboard */,
-				19A3454129813D34005F37B0 /* Assets.xcassets */,
-				19A3454329813D34005F37B0 /* LaunchScreen.storyboard */,
+				19A3454E29813FEF005F37B0 /* Controllers */,
+				19A3454C29813FA8005F37B0 /* Storyboard */,
+				19A3454D29813FC4005F37B0 /* Additional files */,
+				19A3454F29814007005F37B0 /* Assets */,
 				19A3454629813D34005F37B0 /* Info.plist */,
 			);
 			path = iOSResumeApp;
+			sourceTree = "<group>";
+		};
+		19A3454C29813FA8005F37B0 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				19A3453E29813D32005F37B0 /* Main.storyboard */,
+				19A3454329813D34005F37B0 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		19A3454D29813FC4005F37B0 /* Additional files */ = {
+			isa = PBXGroup;
+			children = (
+				19A3453829813D32005F37B0 /* AppDelegate.swift */,
+				19A3453A29813D32005F37B0 /* SceneDelegate.swift */,
+			);
+			path = "Additional files";
+			sourceTree = "<group>";
+		};
+		19A3454E29813FEF005F37B0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				19A3455E2981409D005F37B0 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		19A3454F29814007005F37B0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				19A3454129813D34005F37B0 /* Assets.xcassets */,
+				19A345562981404A005F37B0 /* background.json */,
+				19A345512981404A005F37B0 /* closebutton.json */,
+				19A345542981404A005F37B0 /* download.json */,
+				19A345502981404A005F37B0 /* github.json */,
+				19A345552981404A005F37B0 /* linkedin.json */,
+				19A345532981404A005F37B0 /* shapes.json */,
+				19A345522981404A005F37B0 /* swiftlogo.json */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +179,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				19A3454529813D34005F37B0 /* LaunchScreen.storyboard in Resources */,
+				19A3455A2981404A005F37B0 /* shapes.json in Resources */,
+				19A345582981404A005F37B0 /* closebutton.json in Resources */,
+				19A3455C2981404A005F37B0 /* linkedin.json in Resources */,
+				19A345592981404A005F37B0 /* swiftlogo.json in Resources */,
+				19A3455D2981404A005F37B0 /* background.json in Resources */,
 				19A3454229813D34005F37B0 /* Assets.xcassets in Resources */,
+				19A3455B2981404A005F37B0 /* download.json in Resources */,
+				19A345572981404A005F37B0 /* github.json in Resources */,
 				19A3454029813D32005F37B0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +198,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19A3453D29813D32005F37B0 /* ViewController.swift in Sources */,
 				19A3453929813D32005F37B0 /* AppDelegate.swift in Sources */,
 				19A3453B29813D32005F37B0 /* SceneDelegate.swift in Sources */,
+				19A3455F2981409D005F37B0 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
