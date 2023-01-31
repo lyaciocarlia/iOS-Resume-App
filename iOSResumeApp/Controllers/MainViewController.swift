@@ -6,24 +6,28 @@
 //
 
 import UIKit
+import Lottie
 
 class MainViewController: UIViewController {
 
+    private var menu = MenuView()
+
+}
+// MARK: Life-Cycle
+extension MainViewController{
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor.lightColor
+        
+        view.addSubview(menu)
+        menu.translatesAutoresizingMaskIntoConstraints = false
+        let menuConstraints = [
+            menu.topAnchor.constraint(equalToSystemSpacingBelow: view.topAnchor, multiplier: 10),
+            menu.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
+            menu.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
+            menu.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -110)
+        ]
+        NSLayoutConstraint.activate(menuConstraints)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
