@@ -13,16 +13,16 @@ class MenuView: UIView {
     private lazy var nameLabel : UILabel = {
         let label = UILabel()
         label.text = "Stecalovici Iuliana"
-        label.textColor = UIColor.lightColor
-        label.font = UIFont.menuMainFont
+        label.textColor = .lightColor
+        label.font = .menuMainFont
         return label
     }()
 
     private lazy var functionLabel : UILabel = {
         let label = UILabel()
         label.text = "Junior iOS Dev"
-        label.textColor = UIColor.lightColor
-        label.font = UIFont.menuDetailFont
+        label.textColor = .lightColor
+        label.font = .menuDetailFont
         return label
     }()
 
@@ -45,15 +45,17 @@ class MenuView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.translatesAutoresizingMaskIntoConstraints = false
         
-        self.layer.cornerRadius = menuViewCornerRadius
-        self.backgroundColor = UIColor.darkColor
+        self.layer.cornerRadius = cornerRadius
+        self.backgroundColor = .darkColor
         
+        // MARK: NAME FUNCTION STACKVIEW
         self.addSubview(nameFunctionStackView)
         let nameFunctionStackViewConstraints = [
             nameFunctionStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: nameFunctionStackViewTopSpacing),
-            nameFunctionStackView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: menuViewLeftSpacing),
-            nameFunctionStackView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: menuViewRightSpacing),
+            nameFunctionStackView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: leftSpacing),
+            nameFunctionStackView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: rightSpacing),
             nameFunctionStackView.heightAnchor.constraint(equalToConstant: nameFunctionStackViewHeight)
         ]
         NSLayoutConstraint.activate(nameFunctionStackViewConstraints)
@@ -61,15 +63,14 @@ class MenuView: UIView {
         nameFunctionStackView.addArrangedSubview(nameLabel)
         nameFunctionStackView.addArrangedSubview(functionLabel)
     
-        
-//        let lineView = UIView(frame: CGRect(x: menuViewLeftSpacing, y: 70, width: 200, height: 1.0))
+        //MARK: LINE VIEW
         let lineView = UIView()
         self.addSubview(lineView)
         
         lineView.translatesAutoresizingMaskIntoConstraints = false
         let lineViewConstraints = [
             lineView.topAnchor.constraint(equalTo: nameFunctionStackView.bottomAnchor, constant: distanceBetweenLineAndStackView),
-            lineView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: menuViewLeftSpacing),
+            lineView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: leftSpacing),
             lineView.widthAnchor.constraint(equalToConstant: lineViewWidth),
             lineView.heightAnchor.constraint(equalToConstant: lineViewHeight)
         ]
@@ -78,7 +79,7 @@ class MenuView: UIView {
         lineView.layer.borderWidth = lineViewWidth
         lineView.layer.borderColor = UIColor.lightColor.cgColor
         
-        
+        //MARK: DOWNLOAD BUTTON
         var downloadButtonConfiguration = UIButton.Configuration.plain()
         downloadButtonConfiguration.imagePadding = buttonConfigurantionImagePadding
         downloadButton.configuration = downloadButtonConfiguration
@@ -92,13 +93,13 @@ class MenuView: UIView {
         self.addSubview(downloadButton)
         downloadButton.translatesAutoresizingMaskIntoConstraints = false
         let downloadButtonConstraints = [
-            downloadButton.topAnchor.constraint(equalTo: nameFunctionStackView.bottomAnchor, constant: menuViewDistanceBetweenViews),
-            downloadButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: menuViewLeftSpacing),
+            downloadButton.topAnchor.constraint(equalTo: nameFunctionStackView.bottomAnchor, constant: distanceBetweenViews),
+            downloadButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: leftSpacing),
             downloadButton.heightAnchor.constraint(equalToConstant: buttonHeight)
         ]
         NSLayoutConstraint.activate(downloadButtonConstraints)
         
-        
+        // MARK: LINKEDIN BUTTON
         var linkedInButtonConfiguration = UIButton.Configuration.plain()
         linkedInButtonConfiguration.imagePadding = buttonConfigurantionImagePadding
         linkedInButton.configuration = linkedInButtonConfiguration
@@ -108,17 +109,16 @@ class MenuView: UIView {
         linkedInButton.setTitleColor(.highlighted, for: .highlighted)
         
         
-        
         self.addSubview(linkedInButton)
         linkedInButton.translatesAutoresizingMaskIntoConstraints = false
         let linkedInButtonConstraints = [
-            linkedInButton.topAnchor.constraint(equalTo: downloadButton.bottomAnchor, constant: menuViewDistanceBetweenViews),
-            linkedInButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: menuViewLeftSpacing),
+            linkedInButton.topAnchor.constraint(equalTo: downloadButton.bottomAnchor, constant: distanceBetweenViews),
+            linkedInButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: leftSpacing),
             linkedInButton.heightAnchor.constraint(equalToConstant: buttonHeight)
         ]
         NSLayoutConstraint.activate(linkedInButtonConstraints)
         
-        
+        // MARK: GITHUB BUTTON
         var gitHubConfiguration = UIButton.Configuration.plain()
         gitHubConfiguration.imagePadding = buttonConfigurantionImagePadding
         gitHubButton.configuration = gitHubConfiguration
@@ -132,13 +132,13 @@ class MenuView: UIView {
         self.addSubview(gitHubButton)
         gitHubButton.translatesAutoresizingMaskIntoConstraints = false
         let gitHubButtonConstraints = [
-            gitHubButton.topAnchor.constraint(equalTo: linkedInButton.bottomAnchor, constant: menuViewDistanceBetweenViews),
-            gitHubButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: menuViewLeftSpacing),
+            gitHubButton.topAnchor.constraint(equalTo: linkedInButton.bottomAnchor, constant: distanceBetweenViews),
+            gitHubButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: leftSpacing),
             gitHubButton.heightAnchor.constraint(equalToConstant: buttonHeight)
         ]
         NSLayoutConstraint.activate(gitHubButtonConstraints)
         
-        
+        // MARK: ANIMATION VIEW
         animationView = .init(name: "shapes")
         animationView!.frame = .zero
         animationView!.contentMode = .scaleAspectFit
@@ -148,7 +148,7 @@ class MenuView: UIView {
         
         animationView!.translatesAutoresizingMaskIntoConstraints = false
         let animationViewConstraints = [
-            animationView!.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -menuViewDistanceBetweenViews),
+            animationView!.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -distanceBetweenViews),
             animationView!.leftAnchor.constraint(equalTo: self.leftAnchor),
             animationView!.rightAnchor.constraint(equalTo: self.rightAnchor),
             animationView!.heightAnchor.constraint(equalToConstant: animationViewHeight)

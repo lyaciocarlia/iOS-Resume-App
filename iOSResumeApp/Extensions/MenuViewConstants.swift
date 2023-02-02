@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 extension MenuView{
-    internal var menuViewLeftSpacing: CGFloat {
+    internal var leftSpacing: CGFloat {
         return CGFloat(22)
     }
-    internal var menuViewRightSpacing: CGFloat {
+    internal var rightSpacing: CGFloat {
         return CGFloat(22)
     }
     internal var distanceBetweenLineAndStackView: CGFloat {
@@ -21,7 +21,7 @@ extension MenuView{
     internal var nameFunctionStackViewTopSpacing: CGFloat{
         return CGFloat(25)
     }
-    internal var menuViewCornerRadius: CGFloat{
+    internal var cornerRadius: CGFloat{
         return CGFloat(40)
     }
     internal var nameFunctionStackViewHeight: CGFloat{
@@ -33,7 +33,7 @@ extension MenuView{
     internal var lineViewHeight: CGFloat{
         return CGFloat(1)
     }
-    internal var menuViewDistanceBetweenViews: CGFloat{
+    internal var distanceBetweenViews: CGFloat{
         return CGFloat(30)
     }
     internal var buttonConfigurantionImagePadding: CGFloat{

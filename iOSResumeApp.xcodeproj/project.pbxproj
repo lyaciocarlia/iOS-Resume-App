@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		193A2C6B2988FAA00083020F /* ViewTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A2C6A2988FA9F0083020F /* ViewTitleLabel.swift */; };
+		193A2C6D298903260083020F /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A2C6C298903260083020F /* CustomView.swift */; };
+		193A2C6F298919CA0083020F /* CustomViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A2C6E298919CA0083020F /* CustomViewConstants.swift */; };
+		193A2C7129892A030083020F /* SkillsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A2C7029892A030083020F /* SkillsLabel.swift */; };
+		194DD18E298A90B50060FAE8 /* ExperienceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194DD18D298A90B50060FAE8 /* ExperienceCollectionViewCell.swift */; };
+		194DD190298A90E60060FAE8 /* HobbyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194DD18F298A90E60060FAE8 /* HobbyCollectionViewCell.swift */; };
+		194DD192298A91420060FAE8 /* MainViewControllerCollectionViewFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194DD191298A91420060FAE8 /* MainViewControllerCollectionViewFunctions.swift */; };
+		194DD195298A922A0060FAE8 /* ExperienceCollectionViewCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194DD194298A922A0060FAE8 /* ExperienceCollectionViewCellData.swift */; };
+		194DD197298A92ED0060FAE8 /* HobbyCollectionViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194DD196298A92ED0060FAE8 /* HobbyCollectionViewData.swift */; };
+		194DD199298C1EE70060FAE8 /* HobbyCollectionViewCellConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194DD198298C1EE70060FAE8 /* HobbyCollectionViewCellConstants.swift */; };
 		19A3453929813D32005F37B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A3453829813D32005F37B0 /* AppDelegate.swift */; };
 		19A3453B29813D32005F37B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A3453A29813D32005F37B0 /* SceneDelegate.swift */; };
 		19A3454029813D32005F37B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A3453E29813D32005F37B0 /* Main.storyboard */; };
@@ -35,6 +45,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		193A2C6A2988FA9F0083020F /* ViewTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTitleLabel.swift; sourceTree = "<group>"; };
+		193A2C6C298903260083020F /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		193A2C6E298919CA0083020F /* CustomViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewConstants.swift; sourceTree = "<group>"; };
+		193A2C7029892A030083020F /* SkillsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsLabel.swift; sourceTree = "<group>"; };
+		194DD18D298A90B50060FAE8 /* ExperienceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCollectionViewCell.swift; sourceTree = "<group>"; };
+		194DD18F298A90E60060FAE8 /* HobbyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyCollectionViewCell.swift; sourceTree = "<group>"; };
+		194DD191298A91420060FAE8 /* MainViewControllerCollectionViewFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerCollectionViewFunctions.swift; sourceTree = "<group>"; };
+		194DD194298A922A0060FAE8 /* ExperienceCollectionViewCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCollectionViewCellData.swift; sourceTree = "<group>"; };
+		194DD196298A92ED0060FAE8 /* HobbyCollectionViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyCollectionViewData.swift; sourceTree = "<group>"; };
+		194DD198298C1EE70060FAE8 /* HobbyCollectionViewCellConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyCollectionViewCellConstants.swift; sourceTree = "<group>"; };
 		19A3453529813D32005F37B0 /* iOSResumeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSResumeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A3453829813D32005F37B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19A3453A29813D32005F37B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		194DD193298A921E0060FAE8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				194DD194298A922A0060FAE8 /* ExperienceCollectionViewCellData.swift */,
+				194DD196298A92ED0060FAE8 /* HobbyCollectionViewData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		19A3452C29813D32005F37B0 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +123,7 @@
 		19A3453729813D32005F37B0 /* iOSResumeApp */ = {
 			isa = PBXGroup;
 			children = (
+				194DD193298A921E0060FAE8 /* Model */,
 				19A345672981459B005F37B0 /* Views */,
 				19A3456029814153005F37B0 /* Extensions */,
 				19A3454E29813FEF005F37B0 /* Controllers */,
@@ -156,6 +186,9 @@
 				19A3457829814ED1005F37B0 /* MenuViewConstants.swift */,
 				19A3457A298150A3005F37B0 /* UILabelExtension.swift */,
 				19A3457E29829905005F37B0 /* UIImageExtension.swift */,
+				193A2C6E298919CA0083020F /* CustomViewConstants.swift */,
+				194DD191298A91420060FAE8 /* MainViewControllerCollectionViewFunctions.swift */,
+				194DD198298C1EE70060FAE8 /* HobbyCollectionViewCellConstants.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -164,6 +197,11 @@
 			isa = PBXGroup;
 			children = (
 				19A34568298145CE005F37B0 /* MenuView.swift */,
+				193A2C6A2988FA9F0083020F /* ViewTitleLabel.swift */,
+				193A2C6C298903260083020F /* CustomView.swift */,
+				193A2C7029892A030083020F /* SkillsLabel.swift */,
+				194DD18D298A90B50060FAE8 /* ExperienceCollectionViewCell.swift */,
+				194DD18F298A90E60060FAE8 /* HobbyCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,12 +307,22 @@
 			files = (
 				19A3453929813D32005F37B0 /* AppDelegate.swift in Sources */,
 				19A34569298145CE005F37B0 /* MenuView.swift in Sources */,
+				193A2C7129892A030083020F /* SkillsLabel.swift in Sources */,
+				194DD190298A90E60060FAE8 /* HobbyCollectionViewCell.swift in Sources */,
+				194DD18E298A90B50060FAE8 /* ExperienceCollectionViewCell.swift in Sources */,
 				19A3453B29813D32005F37B0 /* SceneDelegate.swift in Sources */,
+				194DD195298A922A0060FAE8 /* ExperienceCollectionViewCellData.swift in Sources */,
+				194DD197298A92ED0060FAE8 /* HobbyCollectionViewData.swift in Sources */,
+				193A2C6F298919CA0083020F /* CustomViewConstants.swift in Sources */,
 				19A3456E29814A19005F37B0 /* UIFontExtension.swift in Sources */,
 				19A3457F29829905005F37B0 /* UIImageExtension.swift in Sources */,
 				19A3455F2981409D005F37B0 /* MainViewController.swift in Sources */,
 				19A3456229814171005F37B0 /* UIColorExtension.swift in Sources */,
+				194DD199298C1EE70060FAE8 /* HobbyCollectionViewCellConstants.swift in Sources */,
+				193A2C6B2988FAA00083020F /* ViewTitleLabel.swift in Sources */,
 				19A345662981453B005F37B0 /* MainViewControllerConstants.swift in Sources */,
+				193A2C6D298903260083020F /* CustomView.swift in Sources */,
+				194DD192298A91420060FAE8 /* MainViewControllerCollectionViewFunctions.swift in Sources */,
 				19A3457B298150A3005F37B0 /* UILabelExtension.swift in Sources */,
 				19A3457929814ED1005F37B0 /* MenuViewConstants.swift in Sources */,
 			);

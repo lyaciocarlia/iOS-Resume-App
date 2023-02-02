@@ -37,6 +37,6 @@ extension UIColor {
     
     static let pink = UIColor(rgb: 0xF07A8A)
     
-    static let highlighted = UIColor(rgb: 0xBBBBC1)
+    static let highlighted = UIColor(rgb: 0xBBBBC1) 
     
 }
