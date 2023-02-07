@@ -11,23 +11,28 @@ import UIKit
 struct ExperienceCollectionViewCellData{
     static let image = [
         UIImage(named: "stepit"),
-        UIImage(named: "tekedu")
+        UIImage(named: "tekedu"),
+        UIImage(named: "aiesec")
     ]
     static let label1 = [
         UILabel.labelWithText(text: "Lector practician"),
-        UILabel.labelWithText(text: "Project Manager")
+        UILabel.labelWithText(text: "Project Manager"),
+        UILabel.labelWithText(text: "Volunteer")
     ]
     static let label2 = [
         UILabel.labelWithText(text: "Step IT Academy"),
-        UILabel.labelWithText(text: "Tekedu")
+        UILabel.labelWithText(text: "Tekedu"),
+        UILabel.labelWithText(text: "AIESEC in Chisinau")
     ]
     static let label3 = [
         UILabel.labelWithText(text: "september 2021 - present"),
-        UILabel.labelWithText(text: "august - december 2021")
+        UILabel.labelWithText(text: "august - december 2021"),
+        UILabel.labelWithText(text: "oct 2021 - febr 2022")
     ]
     static let info = [
-        UILabel.labelWithText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
-        UILabel.labelWithText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
-        ]
+        UILabel.labelWithText(text: "For a year and a half I worked with over 100 children and helped them better understand technologies such as HTML, Python, Photoshop, Illustrator, Scratch and others."),
+        UILabel.labelWithText(text: "As part of the PRACTIC project, in partnership with UNFPA and Crunchyroll, I organized mentorship sessions with 15 young people on topics such as career guidance and gender equality."),
+        UILabel.labelWithText(text: "I participated in the organization of the event “Leadership Done Right”  as the Organizing Committee Vice President of PR and worked in the MKT & PR department.")
+    ]
 }
 

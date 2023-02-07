@@ -25,7 +25,10 @@ extension MainViewController {
         return CGFloat(18)
     }
     internal var heightInfoView: CGFloat {
-        return CGFloat(300)
+        return CGFloat(270)
+    }
+    internal var heightExperienceView: CGFloat {
+        return CGFloat(250)
     }
     internal var menuTopAnchor: CGFloat {
         return CGFloat(10)
@@ -47,6 +50,15 @@ extension MainViewController {
     }
     internal var sandwichButtonHeightWidthAnchor: CGFloat {
         return CGFloat(30)
+    }
+    internal var closeButtonTopAnchor: CGFloat {
+        return CGFloat(20)
+    }
+    internal var closeButtonRightAnchor: CGFloat {
+        return CGFloat(-18)
+    }
+    internal var closeButtonHeightWidthAnchor: CGFloat {
+        return CGFloat(50)
     }
     internal var titleLabelLeftAnchor: CGFloat {
         return CGFloat(25)
@@ -72,8 +84,11 @@ extension MainViewController {
     internal var edgeSpacing: CGFloat {
         return CGFloat(20)
     }
-    internal var studiesViewHeight: CGFloat {
-        return CGFloat(250)
+    internal var swiftViewHeight: CGFloat {
+        return CGFloat(350)
+    }
+    internal var ceefViewHeight: CGFloat {
+        return CGFloat(160)
     }
     internal var studiesViewTitleLabelTopAnchor: CGFloat {
         return CGFloat(5)
@@ -105,8 +120,8 @@ extension MainViewController {
     internal var scaleTransform: CGFloat {
         return CGFloat(0.9)
     }
-    internal var sandwichButtonAnimationDuration: CGFloat {
-        return CGFloat(0.75)
+    internal var sandwichCloseButtonAnimationDuration: CGFloat {
+        return CGFloat(0.7)
     }
     internal var widthInfoView: CGFloat {
         return CGFloat(view.frame.width - 40)
@@ -121,6 +136,6 @@ extension MainViewController {
         return Int(6)
     }
     internal var experienceCollectionViewNumberOfCells: Int {
-        return Int(2)
+        return Int(3)
     }
 }

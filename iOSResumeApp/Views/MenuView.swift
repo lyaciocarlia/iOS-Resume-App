@@ -17,7 +17,7 @@ class MenuView: UIView {
         label.font = .menuMainFont
         return label
     }()
-
+    
     private lazy var functionLabel : UILabel = {
         let label = UILabel()
         label.text = "Junior iOS Dev"
@@ -25,7 +25,7 @@ class MenuView: UIView {
         label.font = .menuDetailFont
         return label
     }()
-
+    
     private lazy var nameFunctionStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis  = .vertical
@@ -35,7 +35,7 @@ class MenuView: UIView {
         return stackView
     }()
     
-    private var downloadButton = UIButton()
+    private var pdfButton = UIButton()
     
     private var linkedInButton = UIButton()
     
@@ -55,14 +55,14 @@ class MenuView: UIView {
         let nameFunctionStackViewConstraints = [
             nameFunctionStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: nameFunctionStackViewTopSpacing),
             nameFunctionStackView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: leftSpacing),
-            nameFunctionStackView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: rightSpacing),
+            nameFunctionStackView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -rightSpacing),
             nameFunctionStackView.heightAnchor.constraint(equalToConstant: nameFunctionStackViewHeight)
         ]
         NSLayoutConstraint.activate(nameFunctionStackViewConstraints)
         
         nameFunctionStackView.addArrangedSubview(nameLabel)
         nameFunctionStackView.addArrangedSubview(functionLabel)
-    
+        
         //MARK: LINE VIEW
         let lineView = UIView()
         self.addSubview(lineView)
@@ -80,24 +80,24 @@ class MenuView: UIView {
         lineView.layer.borderColor = UIColor.lightColor.cgColor
         
         //MARK: DOWNLOAD BUTTON
-        var downloadButtonConfiguration = UIButton.Configuration.plain()
-        downloadButtonConfiguration.imagePadding = buttonConfigurantionImagePadding
-        downloadButton.configuration = downloadButtonConfiguration
-        downloadButton.setTitle("Download", for: .normal)
-        downloadButton.setImage(UIImage(named: "download")?.resizedImage(Size: CGSize(width: buttonImageHeightWidth, height: buttonImageHeightWidth)), for: .normal)
-        downloadButton.setTitleColor(.lightColor, for: .normal)
-        downloadButton.setTitleColor(.highlighted, for: .highlighted)
+        var pdfButtonConfiguration = UIButton.Configuration.plain()
+        pdfButtonConfiguration.imagePadding = buttonConfigurantionImagePadding
+        pdfButton.configuration = pdfButtonConfiguration
+        pdfButton.setTitle("PDF Format", for: .normal)
+        pdfButton.setImage(UIImage(named: "pdf")?.resizedImage(Size: CGSize(width: buttonImageHeightWidth, height: buttonImageHeightWidth)), for: .normal)
+        pdfButton.setTitleColor(.lightColor, for: .normal)
+        pdfButton.setTitleColor(.highlighted, for: .highlighted)
         
+        pdfButton.addTarget(self, action: #selector(openPdf), for: .touchUpInside)
         
-        
-        self.addSubview(downloadButton)
-        downloadButton.translatesAutoresizingMaskIntoConstraints = false
-        let downloadButtonConstraints = [
-            downloadButton.topAnchor.constraint(equalTo: nameFunctionStackView.bottomAnchor, constant: distanceBetweenViews),
-            downloadButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: leftSpacing),
-            downloadButton.heightAnchor.constraint(equalToConstant: buttonHeight)
+        self.addSubview(pdfButton)
+        pdfButton.translatesAutoresizingMaskIntoConstraints = false
+        let pdfButtonConstraints = [
+            pdfButton.topAnchor.constraint(equalTo: nameFunctionStackView.bottomAnchor, constant: distanceBetweenViews),
+            pdfButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: leftSpacing),
+            pdfButton.heightAnchor.constraint(equalToConstant: buttonHeight)
         ]
-        NSLayoutConstraint.activate(downloadButtonConstraints)
+        NSLayoutConstraint.activate(pdfButtonConstraints)
         
         // MARK: LINKEDIN BUTTON
         var linkedInButtonConfiguration = UIButton.Configuration.plain()
@@ -107,12 +107,12 @@ class MenuView: UIView {
         linkedInButton.setImage(UIImage(named: "linkedin")?.resizedImage(Size: CGSize(width: buttonImageHeightWidth, height: buttonImageHeightWidth)), for: .normal)
         linkedInButton.setTitleColor(.lightColor, for: .normal)
         linkedInButton.setTitleColor(.highlighted, for: .highlighted)
-        
+        linkedInButton.addTarget(self, action: #selector(openLinkedIn), for: .touchUpInside)
         
         self.addSubview(linkedInButton)
         linkedInButton.translatesAutoresizingMaskIntoConstraints = false
         let linkedInButtonConstraints = [
-            linkedInButton.topAnchor.constraint(equalTo: downloadButton.bottomAnchor, constant: distanceBetweenViews),
+            linkedInButton.topAnchor.constraint(equalTo: pdfButton.bottomAnchor, constant: distanceBetweenViews),
             linkedInButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: leftSpacing),
             linkedInButton.heightAnchor.constraint(equalToConstant: buttonHeight)
         ]
@@ -127,7 +127,7 @@ class MenuView: UIView {
         gitHubButton.setTitleColor(.lightColor, for: .normal)
         gitHubButton.setTitleColor(.highlighted, for: .highlighted)
         
-        
+        gitHubButton.addTarget(self, action: #selector(openGitHub), for: .touchUpInside)
         
         self.addSubview(gitHubButton)
         gitHubButton.translatesAutoresizingMaskIntoConstraints = false
@@ -161,4 +161,21 @@ class MenuView: UIView {
     required init? (coder: NSCoder) {
         super.init(coder: coder)
     }
+}
+
+extension MenuView{
+    @objc func openLinkedIn() {
+        guard let url = URL(string: "https://www.linkedin.com/in/iuliana-stecalovici/") else { return }
+        UIApplication.shared.open(url)
+    }
+    
+    @objc func openGitHub() {
+        guard let url = URL(string: "https://stackoverflow.com") else { return }
+        UIApplication.shared.open(url)
+    }
+    @objc func openPdf() {
+        guard let url = URL(string: "https://docs.google.com/document/d/136etuWePWk65EwHAPM5rES5t-MjEn4UXrWzyG_CJeaQ/edit?usp=sharing") else { return }
+        UIApplication.shared.open(url)
+    }
+    
 }

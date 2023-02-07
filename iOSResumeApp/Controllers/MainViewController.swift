@@ -8,8 +8,9 @@
 import UIKit
 import Lottie
 
-class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     // MARK: MENU VIEW
     private var menu = MenuView()
     
@@ -31,6 +32,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // MARK: SANDWICH BUTTON
     private var sandwichButton = UIButton()
+    var home = CGAffineTransform()
+    
+    // MARK: CLOSE BUTTON
+    private var closeButton = UIButton()
     
     // MARK: ABOUT LABEL
     private var aboutLabel: ViewTitleLabel = {
@@ -76,10 +81,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         label.text = "Tel: 064567820"
         return label
     }()
-        
+    
     private lazy var infoLabel : UILabel = {
         let label = UILabel()
-        label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        label.text = "I’m a curious young woman, passionate about iOS Development. I have spent the last half year reading, listening, trying and testing everything I can get my hands on about iOS Dev. I am very energetic, communicative, interested and organized."
         return label
     }()
     
@@ -113,7 +118,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let label = UILabel()
         label.textAlignment = .left
         label.textColor = .lightColor
-        label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        label.text = "I am currently a 4th year student at the Center for Excellence in Economics and Finance, majoring in Programming and Product Analysis."
         label.font = .defaultFont
         label.numberOfLines = numberOfLines
         return label
@@ -142,7 +147,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let label = UILabel(frame: .zero)
         label.textAlignment = .left
         label.textColor = .lightColor
-        label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        label.text = "I started my iOS development journey by reading the Swift Documentation and passing the Cs193p course from Stanford, where I created applications using Swift and UIKit. I used MVC as an architectural design pattern, animations, different types of UIViewControllers and UIViews, AutoLayout and others. I created applications using storyboard and programmatically. To make my applications interactive, I used gesture recognition, Lottie Animations and multithreading."
         label.font = .defaultFont
         label.numberOfLines = numberOfLines
         return label
@@ -155,6 +160,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let label = ViewTitleLabel()
         label.text = "Experience"
         return label
+    }()
+    
+    // MARK: ARROW IMAGE EXPERIENCE
+    private var arrowImageExperience : UIImageView = {
+        var image = UIImageView()
+        image = UIImageView(image: UIImage(named: "rightarrow"))
+        return image
     }()
     
     // MARK: EXPERIENCE VIEW
@@ -203,32 +215,32 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     private var skillone: SkillsLabel = {
         let label = SkillsLabel()
-        label.config(text: "•Swift")
+        label.config(text: "• Swift")
         return label
     }()
     private var skilltwo: SkillsLabel = {
         let label = SkillsLabel()
-        label.config(text: "•Swift")
+        label.config(text: "• UIKit")
         return label
     }()
     private var skillthree: SkillsLabel = {
         let label = SkillsLabel()
-        label.config(text: "•Swift")
+        label.config(text: "• C#")
         return label
     }()
     private var skillfour: SkillsLabel = {
         let label = SkillsLabel()
-        label.config(text: "•Swift")
+        label.config(text: "• C++")
         return label
     }()
     private var skillfive: SkillsLabel = {
         let label = SkillsLabel()
-        label.config(text: "•FGGGGGGGKJJANFNA")
+        label.config(text: "• HTML")
         return label
     }()
     private var skillsix: SkillsLabel = {
         let label = SkillsLabel()
-        label.config(text: "•Swift")
+        label.config(text: "• Photoshop")
         return label
     }()
     
@@ -243,32 +255,32 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     private var skillseven: SkillsLabel = {
         let label = SkillsLabel()
-        label.config(text: "•UiKit")
+        label.config(text: "• Python")
         return label
     }()
     private var skilleight: SkillsLabel = {
         let label = SkillsLabel()
-        label.config(text: "•JJJJJJJJJJJJJJ")
+        label.config(text: "• Data and Algorithms")
         return label
     }()
     private var skillnine: SkillsLabel = {
         let label = SkillsLabel()
-        label.config(text: "•Swift")
+        label.config(text: "• SQL")
         return label
     }()
     private var skillten: SkillsLabel = {
         let label = SkillsLabel()
-        label.config(text: "•Swift")
+        label.config(text: "• Lottie Animations")
         return label
     }()
     private var skilleleven: SkillsLabel = {
         let label = SkillsLabel()
-        label.config(text: "•Swift")
+        label.config(text: "•  CSS")
         return label
     }()
     private var skilltwelve: SkillsLabel = {
         let label = SkillsLabel()
-        label.config(text: "•Swift")
+        label.config(text: "• Illustrator")
         return label
     }()
     
@@ -280,9 +292,16 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return label
     }()
     
+    // MARK: ARROW IMAGE EXPERIENCE
+    private var arrowImageHobby : UIImageView = {
+        var image = UIImageView()
+        image = UIImageView(image: UIImage(named: "rightarrow"))
+        return image
+    }()
+    
     // MARK: HOBBY VIEW
-        
-        private var hobbyCollectionView: UICollectionView?
+    
+    private var hobbyCollectionView: UICollectionView?
     
     private lazy var hobbyView: UIView = {
         let view = UIView(frame: .zero)
@@ -310,10 +329,14 @@ extension MainViewController{
             menu.rightAnchor.constraint(equalTo: view.rightAnchor, constant: menuRightAnchor)
         ]
         NSLayoutConstraint.activate(menuConstraints)
+        menu.isHidden = true
         
         // MARK: MAIN VIEW
         view.addSubview(scrollView)
+        scrollView.showsVerticalScrollIndicator = false
         scrollView.addSubview(contentView)
+        
+        home = scrollView.transform
         
         // MARK: SANDWICH BUTTON
         sandwichButton.setImage(UIImage(named: "menu"), for: .normal)
@@ -329,6 +352,23 @@ extension MainViewController{
             sandwichButton.widthAnchor.constraint(equalToConstant: sandwichButtonHeightWidthAnchor)
         ]
         NSLayoutConstraint.activate(sandwichButtonConstraints)
+        
+        // MARK: CLOSE BUTTON
+        
+        closeButton.setImage(UIImage(named: "close"), for: .normal)
+        closeButton.isUserInteractionEnabled = true
+        closeButton.addTarget(self, action: #selector(closeMenu), for: .touchUpInside)
+        
+        menu.addSubview(closeButton)
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        let closeButtonConstraints = [
+            closeButton.topAnchor.constraint(equalTo: menu.topAnchor, constant: closeButtonTopAnchor),
+            closeButton.rightAnchor.constraint(equalTo: menu.rightAnchor, constant: closeButtonRightAnchor),
+            closeButton.heightAnchor.constraint(equalToConstant: sandwichButtonHeightWidthAnchor),
+            closeButton.widthAnchor.constraint(equalToConstant: sandwichButtonHeightWidthAnchor)
+        ]
+        NSLayoutConstraint.activate(closeButtonConstraints)
+        
         
         // MARK: ABOUT LABEL
         contentView.addSubview(aboutLabel)
@@ -368,7 +408,7 @@ extension MainViewController{
             swiftStudiesView.topAnchor.constraint(equalTo: studiesLabel.bottomAnchor, constant: distanceBetweenViews),
             swiftStudiesView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
             swiftStudiesView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -edgeSpacing),
-            swiftStudiesView.heightAnchor.constraint(equalToConstant: studiesViewHeight)
+            swiftStudiesView.heightAnchor.constraint(equalToConstant: swiftViewHeight)
         ]
         NSLayoutConstraint.activate(swiftStudiesViewConstraints)
         
@@ -395,7 +435,7 @@ extension MainViewController{
         swiftLogoView!.frame = .zero
         swiftLogoView!.contentMode = .scaleAspectFit
         swiftLogoView!.loopMode = .loop
-        swiftLogoView!.animationSpeed = swiftLogoAnimationSpeed 
+        swiftLogoView!.animationSpeed = swiftLogoAnimationSpeed
         swiftStudiesView.addSubview(swiftLogoView!)
         swiftLogoView!.play()
         
@@ -415,7 +455,7 @@ extension MainViewController{
             ceefStudiesView.topAnchor.constraint(equalTo: swiftStudiesView.bottomAnchor, constant: distanceBetweenViews),
             ceefStudiesView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
             ceefStudiesView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -edgeSpacing),
-            ceefStudiesView.heightAnchor.constraint(equalToConstant: studiesViewHeight - swiftLogoWidthHeight - swiftLogoBottomRight)
+            ceefStudiesView.heightAnchor.constraint(equalToConstant: ceefViewHeight)
         ]
         NSLayoutConstraint.activate(ceefStudiesViewConstraints)
         
@@ -449,6 +489,18 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(experienceLabelConstraints)
         
+        
+        // MARK: ARROW IMAGE EXPERIENCE
+        arrowImageExperience.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(arrowImageExperience)
+        let arrowImageExperienceConstraints = [
+            arrowImageExperience.topAnchor.constraint(equalTo: ceefStudiesView.bottomAnchor, constant: distanceBetweenViews),
+            arrowImageExperience.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -2 * edgeSpacing),
+            arrowImageExperience.heightAnchor.constraint(equalToConstant: titleLabelHeightAnchor),
+            arrowImageExperience.widthAnchor.constraint(equalToConstant: titleLabelHeightAnchor)
+        ]
+        NSLayoutConstraint.activate(arrowImageExperienceConstraints)
+        
         // MARK: EXPERIENCE VIEW
         
         contentView.addSubview(experienceView)
@@ -457,16 +509,16 @@ extension MainViewController{
             experienceView.topAnchor.constraint(equalTo: experienceLabel.bottomAnchor, constant: distanceBetweenViews),
             experienceView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
             experienceView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -edgeSpacing),
-            experienceView.heightAnchor.constraint(equalToConstant: heightInfoView)
+            experienceView.heightAnchor.constraint(equalToConstant: heightExperienceView)
         ]
         NSLayoutConstraint.activate(experienceViewConstraints)
         
         let experienceCollectionViewLayout = UICollectionViewFlowLayout()
         experienceCollectionViewLayout.scrollDirection = .horizontal
-        experienceCollectionViewLayout.itemSize = CGSize(width: widthInfoView , height: heightInfoView)
+        experienceCollectionViewLayout.itemSize = CGSize(width: widthInfoView , height: heightExperienceView)
         
         experienceCollectionView = UICollectionView(frame: .zero,
-                                          collectionViewLayout: experienceCollectionViewLayout)
+                                                    collectionViewLayout: experienceCollectionViewLayout)
         
         guard let experienceCollectionView = experienceCollectionView else {
             return
@@ -479,12 +531,12 @@ extension MainViewController{
         experienceCollectionView.layer.cornerRadius = cornerRadius
         experienceCollectionView.backgroundColor = .pink
         experienceCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        
+        experienceCollectionView.showsHorizontalScrollIndicator = false
         let experienceCollectionViewConstraints = [
             experienceCollectionView.topAnchor.constraint(equalTo: experienceView.topAnchor, constant: collectionViewTopLeftRightAnchor),
             experienceCollectionView.leftAnchor.constraint(equalTo: experienceView.leftAnchor, constant: collectionViewTopLeftRightAnchor),
             experienceCollectionView.rightAnchor.constraint(equalTo: experienceView.rightAnchor, constant: collectionViewTopLeftRightAnchor),
-            experienceCollectionView.heightAnchor.constraint(equalToConstant: heightInfoView)
+            experienceCollectionView.heightAnchor.constraint(equalToConstant: heightExperienceView)
         ]
         NSLayoutConstraint.activate(experienceCollectionViewConstraints)
         
@@ -512,13 +564,13 @@ extension MainViewController{
         
         skillsView.addSubview(skillsHorizontalStackView)
         skillsHorizontalStackView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         skillsHorizontalStackView.centerXAnchor.constraint(equalTo: skillsView.centerXAnchor).isActive = true
         skillsHorizontalStackView.centerYAnchor.constraint(equalTo: skillsView.centerYAnchor).isActive = true
-
+        
         skillsHorizontalStackView.addArrangedSubview(firstSkillsVerticalStackView)
         skillsHorizontalStackView.addArrangedSubview(secondSkillsVerticalStackView)
-
+        
         firstSkillsVerticalStackView.translatesAutoresizingMaskIntoConstraints = false
         
         firstSkillsVerticalStackView.leftAnchor.constraint(equalTo: skillsView.leftAnchor, constant: skillsStackViewTopLeft).isActive = true
@@ -554,7 +606,18 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(hobbyLabelConstraints)
         
-        // MARK: Hobby
+        // MARK: ARROW IMAGE HOBBY
+        arrowImageHobby.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(arrowImageHobby)
+        let arrowImageHobbyConstraints = [
+            arrowImageHobby.topAnchor.constraint(equalTo: skillsView.bottomAnchor, constant: distanceBetweenViews),
+            arrowImageHobby.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -2 * edgeSpacing),
+            arrowImageHobby.heightAnchor.constraint(equalToConstant: titleLabelHeightAnchor),
+            arrowImageHobby.widthAnchor.constraint(equalToConstant: titleLabelHeightAnchor)
+        ]
+        NSLayoutConstraint.activate(arrowImageHobbyConstraints)
+        
+        // MARK: HOBBY VIEW
         
         contentView.addSubview(hobbyView)
         hobbyView.translatesAutoresizingMaskIntoConstraints = false
@@ -572,13 +635,14 @@ extension MainViewController{
         hobbyCollectionViewLayout.itemSize = CGSize(width: hobbyViewHeightAnchor, height: hobbyViewHeightAnchor)
         
         hobbyCollectionView = UICollectionView(frame: .zero,
-                                          collectionViewLayout: hobbyCollectionViewLayout)
+                                               collectionViewLayout: hobbyCollectionViewLayout)
         guard let hobbyCollectionView = hobbyCollectionView else {
             return
         }
         hobbyCollectionView.register(HobbyCollectionViewCell.self, forCellWithReuseIdentifier: HobbyCollectionViewCell.identifier)
         hobbyCollectionView.dataSource = self
         hobbyCollectionView.delegate = self
+        hobbyCollectionView.showsHorizontalScrollIndicator = false
         
         hobbyView.addSubview(hobbyCollectionView)
         hobbyCollectionView.backgroundColor = .lightColor
@@ -595,20 +659,36 @@ extension MainViewController{
     }
 }
 
-
-// MARK: SHOW MENU FUNC
+// MARK: SHOW CLOSE MENU FUNC
 extension MainViewController{
     @objc func showMenu() {
-        self.scrollView.layer.cornerRadius = cornerRadius
-        self.scrollView.layer.cornerRadius = cornerRadius
-        let x = view.frame.width * xAmplification   
+        menu.isHidden = false
+        self.contentView.layer.cornerRadius = cornerRadius
+        let x = view.frame.width * xAmplification
         let originalTransform = self.scrollView.transform
         let scaledTransform = originalTransform.scaledBy (x: scaleTransform, y: scaleTransform)
         let scaledAndTranslatedTransform = scaledTransform.translatedBy(x: x, y: yTransform)
-        UIView.animate (withDuration: sandwichButtonAnimationDuration)
+        UIView.animate (withDuration: sandwichCloseButtonAnimationDuration)
         {
             self.scrollView.transform = scaledAndTranslatedTransform
             self.sandwichButton.isHidden = true
         }
     }
+    
+    @objc func closeMenu() {
+        
+        UIView.animate (withDuration: sandwichCloseButtonAnimationDuration)
+        {
+            self.scrollView.transform = self.home
+            self.sandwichButton.isHidden = false
+        }
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.menu.isHidden = true
+            self.contentView.layer.cornerRadius = 0
+        }
+        
+    }
+    
 }

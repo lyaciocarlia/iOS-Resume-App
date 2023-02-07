@@ -22,7 +22,7 @@ class CustomView: UIView {
     
     required init? (coder: NSCoder) {
         super.init(coder: coder)
-       setup()
+        setup()
     }
     
     func setup(){
@@ -50,7 +50,7 @@ class CustomView: UIView {
             label1.widthAnchor.constraint(equalToConstant: titleLabelWidthAnchor)
         ]
         NSLayoutConstraint.activate(titleLabelConstraints)
-
+        
         label2.textAlignment = .left
         label2.textColor = .lightColor
         label2.font = .defaultFont
@@ -79,14 +79,15 @@ class CustomView: UIView {
         infoLabel.textAlignment = .left
         infoLabel.textColor = .lightColor
         infoLabel.font = .defaultFont
-        infoLabel.numberOfLines = infoLabelNumberOfLines    
+        infoLabel.numberOfLines = infoLabelNumberOfLines
         addSubview(infoLabel)
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         let infoLabelConstraints = [
             infoLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: leftSpacing),
             infoLabel.topAnchor.constraint(equalTo: image.bottomAnchor, constant: distanceBetweenImageAndLabels),
             infoLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -leftSpacing ),
-            infoLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: infoLabelBottomAnchor)]
+            infoLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: infoLabelBottomAnchor)
+        ]
         NSLayoutConstraint.activate(infoLabelConstraints)
     }
     
@@ -98,6 +99,5 @@ class CustomView: UIView {
         self.infoLabel = infoLabel
         setup()
     }
-
 }
 

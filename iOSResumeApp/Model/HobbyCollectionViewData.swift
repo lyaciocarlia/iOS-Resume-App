@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct ImageData{
-     static let image = [
+    static let image = [
         UIImage(named: "reading"),
         UIImage(named: "drawing"),
         UIImage(named: "sport"),

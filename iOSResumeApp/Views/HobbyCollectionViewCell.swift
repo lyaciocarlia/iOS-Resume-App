@@ -15,7 +15,6 @@ class HobbyCollectionViewCell: UICollectionViewCell {
         imageView.image = UIImage()
         return imageView
     }()
-     
     
     override init(frame: CGRect) {
         super.init(frame: frame)

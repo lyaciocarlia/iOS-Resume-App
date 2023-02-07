@@ -13,7 +13,7 @@ extension MenuView{
         return CGFloat(22)
     }
     internal var rightSpacing: CGFloat {
-        return CGFloat(22)
+        return CGFloat(65)
     }
     internal var distanceBetweenLineAndStackView: CGFloat {
         return CGFloat(5)
