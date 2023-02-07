@@ -170,7 +170,7 @@ extension MenuView{
     }
     
     @objc func openGitHub() {
-        guard let url = URL(string: "https://stackoverflow.com") else { return }
+        guard let url = URL(string: "https://github.com/lyaciocarlia") else { return }
         UIApplication.shared.open(url)
     }
     @objc func openPdf() {
