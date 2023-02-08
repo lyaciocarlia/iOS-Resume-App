@@ -462,14 +462,6 @@ extension MainViewController{
         // MARK: HOBBY VIEW
         contentView.addSubview(hobbyView)
         hobbyView.translatesAutoresizingMaskIntoConstraints = false
-        let hobbyViewConstraints = [
-            hobbyView.topAnchor.constraint(equalTo: hobbyLabel.bottomAnchor, constant: distanceBetweenViews),
-            hobbyView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
-            hobbyView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -edgeSpacing),
-            hobbyView.heightAnchor.constraint(equalToConstant: hobbyViewHeightAnchor)
-        ]
-        NSLayoutConstraint.activate(hobbyViewConstraints)
-        
         
         let hobbyCollectionViewLayout = UICollectionViewFlowLayout()
         hobbyCollectionViewLayout.scrollDirection = .horizontal
@@ -545,7 +537,7 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(menuConstraints)
         
-        // MARK:  CONSTRAINTS
+        // MARK: SANDWICH BUTTON CONSTRAINTS
         let sandwichButtonConstraints = [
             sandwichButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: sandwichButtonTopAnchor),
             sandwichButton.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: sandwichButtonHeightWidthAnchor),
@@ -554,6 +546,7 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(sandwichButtonConstraints)
         
+        // MARK: CLOSE BUTTON CONSTRAINTS
         let closeButtonConstraints = [
             closeButton.topAnchor.constraint(equalTo: menu.topAnchor, constant: closeButtonTopAnchor),
             closeButton.rightAnchor.constraint(equalTo: menu.rightAnchor, constant: closeButtonRightAnchor),
@@ -562,6 +555,7 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(closeButtonConstraints)
         
+        // MARK: ABOUT LABEL CONSTRAINTS
         let aboutLabelConstraints = [
             aboutLabel.topAnchor.constraint(equalTo: sandwichButton.bottomAnchor, constant: distanceBetweenViews),
             aboutLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: titleLabelLeftAnchor),
@@ -570,6 +564,7 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(aboutLabelConstraints)
         
+        // MARK: GENERAL INFO VIEW CONSTRAINTS
         let generalInfoViewConstraints = [
             generalInfoView.topAnchor.constraint(equalTo: aboutLabel.bottomAnchor, constant: distanceBetweenViews),
             generalInfoView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
@@ -578,7 +573,7 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(generalInfoViewConstraints)
         
-        // MARK:  CONSTRAINTS
+        // MARK:  STUDIES LABEL CONSTRAINTS
         let studiesLabelConstraints = [
             studiesLabel.topAnchor.constraint(equalTo: generalInfoView.bottomAnchor, constant: distanceBetweenViews),
             studiesLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: titleLabelLeftAnchor),
@@ -587,6 +582,7 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(studiesLabelConstraints)
         
+        // MARK: SWIFT STUDIES VIEW CONSTRAINTS
         let swiftStudiesViewConstraints = [
             swiftStudiesView.topAnchor.constraint(equalTo: studiesLabel.bottomAnchor, constant: distanceBetweenViews),
             swiftStudiesView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
@@ -595,6 +591,7 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(swiftStudiesViewConstraints)
         
+        // MARK: SWIFT STUDIES LABEL CONSTRAINTS
         let swiftStudiesLabelConstraints = [
             swiftStudiesLabel.topAnchor.constraint(equalTo: swiftStudiesView.topAnchor, constant: studiesViewTitleLabelTopAnchor),
             swiftStudiesLabel.leftAnchor.constraint(equalTo: swiftStudiesView.leftAnchor, constant: studiesViewLabelsEdgeAnchor),
@@ -603,12 +600,14 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(swiftStudiesLabelConstraints)
         
+        // MARK: SWIFT STUDIES INFO LABEL CONSTRAINTS
         let swiftStudiesInfoLabelConstraints = [
             swiftStudiesInfoLabel.leftAnchor.constraint(equalTo: swiftStudiesView.leftAnchor, constant: studiesViewLabelsEdgeAnchor),
             swiftStudiesInfoLabel.topAnchor.constraint(equalTo: swiftStudiesLabel.bottomAnchor, constant: studiesViewLabelTopAnchor),
             swiftStudiesInfoLabel.rightAnchor.constraint(equalTo: swiftStudiesView.rightAnchor, constant: -studiesViewLabelsEdgeAnchor )]
         NSLayoutConstraint.activate(swiftStudiesInfoLabelConstraints)
         
+        // MARK: SWIFT LOGO CONSTRAINTS
         let swiftLogoViewConstraints = [
             swiftLogoView!.bottomAnchor.constraint(equalTo: swiftStudiesView.bottomAnchor, constant: swiftLogoBottomRight),
             swiftLogoView!.rightAnchor.constraint(equalTo: swiftStudiesView.rightAnchor, constant: swiftLogoBottomRight),
@@ -617,6 +616,7 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(swiftLogoViewConstraints)
         
+        // MARK: CEEF STUDIES VIEW CONSTRAINTS
         let ceefStudiesViewConstraints = [
             ceefStudiesView.topAnchor.constraint(equalTo: swiftStudiesView.bottomAnchor, constant: distanceBetweenViews),
             ceefStudiesView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
@@ -625,6 +625,7 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(ceefStudiesViewConstraints)
         
+        // MARK: CEEF STUDIES LABEL CONSTRAINTS
         let ceefStudiesLabelConstraints = [
             ceefStudiesLabel.topAnchor.constraint(equalTo: ceefStudiesView.topAnchor, constant: studiesViewTitleLabelTopAnchor),
             ceefStudiesLabel.leftAnchor.constraint(equalTo: ceefStudiesView.leftAnchor, constant: studiesViewLabelsEdgeAnchor),
@@ -633,6 +634,7 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(ceefStudiesLabelConstraints)
         
+        // MARK: CEEF STUDIES INFO LABEL CONSTRAINTS
         let ceefStudiesInfoLabelConstraints = [
             ceefStudiesInfoLabel.leftAnchor.constraint(equalTo: ceefStudiesView.leftAnchor, constant: studiesViewLabelsEdgeAnchor),
             ceefStudiesInfoLabel.topAnchor.constraint(equalTo: ceefStudiesLabel.bottomAnchor, constant: studiesViewLabelTopAnchor),
@@ -640,6 +642,7 @@ extension MainViewController{
             ceefStudiesInfoLabel.bottomAnchor.constraint(equalTo: ceefStudiesView.bottomAnchor, constant: -studiesViewLabelsEdgeAnchor)]
         NSLayoutConstraint.activate(ceefStudiesInfoLabelConstraints)
      
+        // MARK: EXPERIENCE LABEL CONSTRAINTS
         let experienceLabelConstraints = [
             experienceLabel.topAnchor.constraint(equalTo: ceefStudiesView.bottomAnchor, constant: distanceBetweenViews),
             experienceLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: titleLabelLeftAnchor),
@@ -648,6 +651,7 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(experienceLabelConstraints)
         
+        // MARK: ARROW IMAGE EXPERIENCE CONSTRAINTS
         let arrowImageExperienceConstraints = [
             arrowImageExperience.topAnchor.constraint(equalTo: ceefStudiesView.bottomAnchor, constant: distanceBetweenViews),
             arrowImageExperience.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -2 * edgeSpacing),
@@ -656,6 +660,7 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(arrowImageExperienceConstraints)
         
+        // MARK: EXPERIENCE VIEW CONSTRAINTS
         let experienceViewConstraints = [
             experienceView.topAnchor.constraint(equalTo: experienceLabel.bottomAnchor, constant: distanceBetweenViews),
             experienceView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
@@ -664,6 +669,7 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(experienceViewConstraints)
         
+        // MARK: SKILLS LABEL CONSTRAINTS
         let skillsLabelConstraints = [
             skillsLabel.topAnchor.constraint(equalTo: experienceView.bottomAnchor, constant: distanceBetweenViews),
             skillsLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: titleLabelLeftAnchor),
@@ -672,6 +678,7 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(skillsLabelConstraints)
         
+        // MARK: SKILLS VIEW CONSTRAINTS
         let skillsViewConstraints = [
             skillsView.topAnchor.constraint(equalTo: skillsLabel.bottomAnchor, constant: distanceBetweenViews),
             skillsView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
@@ -689,6 +696,7 @@ extension MainViewController{
         secondSkillsVerticalStackView.rightAnchor.constraint(equalTo: skillsView.rightAnchor, constant: -skillsStackViewTopLeft).isActive = true
         secondSkillsVerticalStackView.topAnchor.constraint(equalTo: skillsView.topAnchor, constant: skillsStackViewTopLeft).isActive = true
         
+        // MARK: HOBBY LABEL CONSTRAINTS
         let hobbyLabelConstraints = [
             hobbyLabel.topAnchor.constraint(equalTo: skillsView.bottomAnchor, constant: distanceBetweenViews),
             hobbyLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: titleLabelLeftAnchor),
@@ -697,6 +705,7 @@ extension MainViewController{
         ]
         NSLayoutConstraint.activate(hobbyLabelConstraints)
         
+        // MARK: ARROW IMAGE HOBBY CONSTRAINTS
         let arrowImageHobbyConstraints = [
             arrowImageHobby.topAnchor.constraint(equalTo: skillsView.bottomAnchor, constant: distanceBetweenViews),
             arrowImageHobby.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -2 * edgeSpacing),
@@ -704,5 +713,14 @@ extension MainViewController{
             arrowImageHobby.widthAnchor.constraint(equalToConstant: titleLabelHeightAnchor)
         ]
         NSLayoutConstraint.activate(arrowImageHobbyConstraints)
+        
+        // MARK: HOBBY VIEW CONSTRAINTS
+        let hobbyViewConstraints = [
+            hobbyView.topAnchor.constraint(equalTo: hobbyLabel.bottomAnchor, constant: distanceBetweenViews),
+            hobbyView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
+            hobbyView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -edgeSpacing),
+            hobbyView.heightAnchor.constraint(equalToConstant: hobbyViewHeightAnchor)
+        ]
+        NSLayoutConstraint.activate(hobbyViewConstraints)
     }
 }
