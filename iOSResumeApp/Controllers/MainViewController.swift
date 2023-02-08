@@ -322,196 +322,78 @@ extension MainViewController{
         
         // MARK: MENU VIEW
         view.addSubview(menu)
-        let menuConstraints = [
-            menu.topAnchor.constraint(equalToSystemSpacingBelow: view.topAnchor, multiplier: menuTopAnchor),
-            menu.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: menuBottomAnchor),
-            menu.leftAnchor.constraint(equalTo: view.leftAnchor, constant: menuLeftAnchor),
-            menu.rightAnchor.constraint(equalTo: view.rightAnchor, constant: menuRightAnchor)
-        ]
-        NSLayoutConstraint.activate(menuConstraints)
         menu.isHidden = true
         
         // MARK: MAIN VIEW
         view.addSubview(scrollView)
         scrollView.showsVerticalScrollIndicator = false
         scrollView.addSubview(contentView)
-        
         home = scrollView.transform
         
         // MARK: SANDWICH BUTTON
         sandwichButton.setImage(UIImage(named: "menu"), for: .normal)
-        sandwichButton.isUserInteractionEnabled = true
         sandwichButton.addTarget(self, action: #selector(showMenu), for: .touchUpInside)
-        
-        contentView.addSubview(sandwichButton)
         sandwichButton.translatesAutoresizingMaskIntoConstraints = false
-        let sandwichButtonConstraints = [
-            sandwichButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: sandwichButtonTopAnchor),
-            sandwichButton.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: sandwichButtonHeightWidthAnchor),
-            sandwichButton.heightAnchor.constraint(equalToConstant: sandwichButtonHeightWidthAnchor),
-            sandwichButton.widthAnchor.constraint(equalToConstant: sandwichButtonHeightWidthAnchor)
-        ]
-        NSLayoutConstraint.activate(sandwichButtonConstraints)
+        contentView.addSubview(sandwichButton)
         
         // MARK: CLOSE BUTTON
-        
         closeButton.setImage(UIImage(named: "close"), for: .normal)
         closeButton.isUserInteractionEnabled = true
         closeButton.addTarget(self, action: #selector(closeMenu), for: .touchUpInside)
-        
-        menu.addSubview(closeButton)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
-        let closeButtonConstraints = [
-            closeButton.topAnchor.constraint(equalTo: menu.topAnchor, constant: closeButtonTopAnchor),
-            closeButton.rightAnchor.constraint(equalTo: menu.rightAnchor, constant: closeButtonRightAnchor),
-            closeButton.heightAnchor.constraint(equalToConstant: sandwichButtonHeightWidthAnchor),
-            closeButton.widthAnchor.constraint(equalToConstant: sandwichButtonHeightWidthAnchor)
-        ]
-        NSLayoutConstraint.activate(closeButtonConstraints)
-        
+        menu.addSubview(closeButton)
         
         // MARK: ABOUT LABEL
         contentView.addSubview(aboutLabel)
-        let aboutLabelConstraints = [
-            aboutLabel.topAnchor.constraint(equalTo: sandwichButton.bottomAnchor, constant: distanceBetweenViews),
-            aboutLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: titleLabelLeftAnchor),
-            aboutLabel.heightAnchor.constraint(equalToConstant: titleLabelHeightAnchor),
-            aboutLabel.widthAnchor.constraint(equalToConstant: titleLabelWidthAnchor)
-        ]
-        NSLayoutConstraint.activate(aboutLabelConstraints)
         
         // MARK: GENERAL INFO VIEW
-        contentView.addSubview(generalInfoView)
         generalInfoView.translatesAutoresizingMaskIntoConstraints = false
-        let generalInfoViewConstraints = [
-            generalInfoView.topAnchor.constraint(equalTo: aboutLabel.bottomAnchor, constant: distanceBetweenViews),
-            generalInfoView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
-            generalInfoView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -edgeSpacing),
-            generalInfoView.heightAnchor.constraint(equalToConstant: heightInfoView)
-        ]
-        NSLayoutConstraint.activate(generalInfoViewConstraints)
+        contentView.addSubview(generalInfoView)
         
         // MARK: STUDIES LABEL
         contentView.addSubview(studiesLabel)
-        let studiesLabelConstraints = [
-            studiesLabel.topAnchor.constraint(equalTo: generalInfoView.bottomAnchor, constant: distanceBetweenViews),
-            studiesLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: titleLabelLeftAnchor),
-            studiesLabel.heightAnchor.constraint(equalToConstant: titleLabelHeightAnchor),
-            studiesLabel.widthAnchor.constraint(equalToConstant: titleLabelWidthAnchor)
-        ]
-        NSLayoutConstraint.activate(studiesLabelConstraints)
         
         // MARK: SWIFT STUDIES VIEW
-        contentView.addSubview(swiftStudiesView)
         swiftStudiesView.translatesAutoresizingMaskIntoConstraints = false
-        let swiftStudiesViewConstraints = [
-            swiftStudiesView.topAnchor.constraint(equalTo: studiesLabel.bottomAnchor, constant: distanceBetweenViews),
-            swiftStudiesView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
-            swiftStudiesView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -edgeSpacing),
-            swiftStudiesView.heightAnchor.constraint(equalToConstant: swiftViewHeight)
-        ]
-        NSLayoutConstraint.activate(swiftStudiesViewConstraints)
+        contentView.addSubview(swiftStudiesView)
         
-        swiftStudiesView.addSubview(swiftStudiesLabel)
         swiftStudiesLabel.translatesAutoresizingMaskIntoConstraints = false
-        let swiftStudiesLabelConstraints = [
-            swiftStudiesLabel.topAnchor.constraint(equalTo: swiftStudiesView.topAnchor, constant: studiesViewTitleLabelTopAnchor),
-            swiftStudiesLabel.leftAnchor.constraint(equalTo: swiftStudiesView.leftAnchor, constant: studiesViewLabelsEdgeAnchor),
-            swiftStudiesLabel.heightAnchor.constraint(equalToConstant: studiesViewTitleLabelHeightAnchor),
-            swiftStudiesLabel.rightAnchor.constraint(equalTo: swiftStudiesView.rightAnchor, constant: -studiesViewLabelsEdgeAnchor)
-        ]
-        NSLayoutConstraint.activate(swiftStudiesLabelConstraints)
         swiftStudiesLabel.sizeToFit()
+        swiftStudiesView.addSubview(swiftStudiesLabel)
         
-        swiftStudiesView.addSubview(swiftStudiesInfoLabel)
         swiftStudiesInfoLabel.translatesAutoresizingMaskIntoConstraints = false
-        let swiftStudiesInfoLabelConstraints = [
-            swiftStudiesInfoLabel.leftAnchor.constraint(equalTo: swiftStudiesView.leftAnchor, constant: studiesViewLabelsEdgeAnchor),
-            swiftStudiesInfoLabel.topAnchor.constraint(equalTo: swiftStudiesLabel.bottomAnchor, constant: studiesViewLabelTopAnchor),
-            swiftStudiesInfoLabel.rightAnchor.constraint(equalTo: swiftStudiesView.rightAnchor, constant: -studiesViewLabelsEdgeAnchor )]
-        NSLayoutConstraint.activate(swiftStudiesInfoLabelConstraints)
+        swiftStudiesView.addSubview(swiftStudiesInfoLabel)
         
         swiftLogoView = .init(name: "swiftlogo")
         swiftLogoView!.frame = .zero
         swiftLogoView!.contentMode = .scaleAspectFit
         swiftLogoView!.loopMode = .loop
         swiftLogoView!.animationSpeed = swiftLogoAnimationSpeed
+        swiftLogoView!.translatesAutoresizingMaskIntoConstraints = false
         swiftStudiesView.addSubview(swiftLogoView!)
         swiftLogoView!.play()
         
-        swiftLogoView!.translatesAutoresizingMaskIntoConstraints = false
-        let swiftLogoViewConstraints = [
-            swiftLogoView!.bottomAnchor.constraint(equalTo: swiftStudiesView.bottomAnchor, constant: swiftLogoBottomRight),
-            swiftLogoView!.rightAnchor.constraint(equalTo: swiftStudiesView.rightAnchor, constant: swiftLogoBottomRight),
-            swiftLogoView!.heightAnchor.constraint(equalToConstant: swiftLogoWidthHeight),
-            swiftLogoView!.widthAnchor.constraint(equalToConstant: swiftLogoWidthHeight)
-        ]
-        NSLayoutConstraint.activate(swiftLogoViewConstraints)
-        
         // MARK: CEEF STUDIES VIEW
-        contentView.addSubview(ceefStudiesView)
         ceefStudiesView.translatesAutoresizingMaskIntoConstraints = false
-        let ceefStudiesViewConstraints = [
-            ceefStudiesView.topAnchor.constraint(equalTo: swiftStudiesView.bottomAnchor, constant: distanceBetweenViews),
-            ceefStudiesView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
-            ceefStudiesView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -edgeSpacing),
-            ceefStudiesView.heightAnchor.constraint(equalToConstant: ceefViewHeight)
-        ]
-        NSLayoutConstraint.activate(ceefStudiesViewConstraints)
+        contentView.addSubview(ceefStudiesView)
         
-        ceefStudiesView.addSubview(ceefStudiesLabel)
-        ceefStudiesLabel.translatesAutoresizingMaskIntoConstraints = false
-        let ceefStudiesLabelConstraints = [
-            ceefStudiesLabel.topAnchor.constraint(equalTo: ceefStudiesView.topAnchor, constant: studiesViewTitleLabelTopAnchor),
-            ceefStudiesLabel.leftAnchor.constraint(equalTo: ceefStudiesView.leftAnchor, constant: studiesViewLabelsEdgeAnchor),
-            ceefStudiesLabel.heightAnchor.constraint(equalToConstant: studiesViewTitleLabelHeightAnchor),
-            ceefStudiesLabel.rightAnchor.constraint(equalTo: ceefStudiesView.rightAnchor, constant: -studiesViewLabelsEdgeAnchor)
-        ]
-        NSLayoutConstraint.activate(ceefStudiesLabelConstraints)
         ceefStudiesLabel.sizeToFit()
+        ceefStudiesLabel.translatesAutoresizingMaskIntoConstraints = false
+        ceefStudiesView.addSubview(ceefStudiesLabel)
         
-        ceefStudiesView.addSubview(ceefStudiesInfoLabel)
         ceefStudiesInfoLabel.translatesAutoresizingMaskIntoConstraints = false
-        let ceefStudiesInfoLabelConstraints = [
-            ceefStudiesInfoLabel.leftAnchor.constraint(equalTo: ceefStudiesView.leftAnchor, constant: studiesViewLabelsEdgeAnchor),
-            ceefStudiesInfoLabel.topAnchor.constraint(equalTo: ceefStudiesLabel.bottomAnchor, constant: studiesViewLabelTopAnchor),
-            ceefStudiesInfoLabel.rightAnchor.constraint(equalTo: ceefStudiesView.rightAnchor, constant: -studiesViewLabelsEdgeAnchor ),
-            ceefStudiesInfoLabel.bottomAnchor.constraint(equalTo: ceefStudiesView.bottomAnchor, constant: -studiesViewLabelsEdgeAnchor)]
-        NSLayoutConstraint.activate(ceefStudiesInfoLabelConstraints)
+        ceefStudiesView.addSubview(ceefStudiesInfoLabel)
         
         // MARK: EXPERIENCE LABEL
         contentView.addSubview(experienceLabel)
-        let experienceLabelConstraints = [
-            experienceLabel.topAnchor.constraint(equalTo: ceefStudiesView.bottomAnchor, constant: distanceBetweenViews),
-            experienceLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: titleLabelLeftAnchor),
-            experienceLabel.heightAnchor.constraint(equalToConstant: titleLabelHeightAnchor),
-            experienceLabel.widthAnchor.constraint(equalToConstant: titleLabelWidthAnchor)
-        ]
-        NSLayoutConstraint.activate(experienceLabelConstraints)
-        
         
         // MARK: ARROW IMAGE EXPERIENCE
         arrowImageExperience.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(arrowImageExperience)
-        let arrowImageExperienceConstraints = [
-            arrowImageExperience.topAnchor.constraint(equalTo: ceefStudiesView.bottomAnchor, constant: distanceBetweenViews),
-            arrowImageExperience.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -2 * edgeSpacing),
-            arrowImageExperience.heightAnchor.constraint(equalToConstant: titleLabelHeightAnchor),
-            arrowImageExperience.widthAnchor.constraint(equalToConstant: titleLabelHeightAnchor)
-        ]
-        NSLayoutConstraint.activate(arrowImageExperienceConstraints)
         
         // MARK: EXPERIENCE VIEW
-        
-        contentView.addSubview(experienceView)
         experienceView.translatesAutoresizingMaskIntoConstraints = false
-        let experienceViewConstraints = [
-            experienceView.topAnchor.constraint(equalTo: experienceLabel.bottomAnchor, constant: distanceBetweenViews),
-            experienceView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
-            experienceView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -edgeSpacing),
-            experienceView.heightAnchor.constraint(equalToConstant: heightExperienceView)
-        ]
-        NSLayoutConstraint.activate(experienceViewConstraints)
+        contentView.addSubview(experienceView)
         
         let experienceCollectionViewLayout = UICollectionViewFlowLayout()
         experienceCollectionViewLayout.scrollDirection = .horizontal
@@ -542,39 +424,18 @@ extension MainViewController{
         
         // MARK: SKILLS LABEL
         contentView.addSubview(skillsLabel)
-        let skillsLabelConstraints = [
-            skillsLabel.topAnchor.constraint(equalTo: experienceView.bottomAnchor, constant: distanceBetweenViews),
-            skillsLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: titleLabelLeftAnchor),
-            skillsLabel.heightAnchor.constraint(equalToConstant: titleLabelHeightAnchor),
-            skillsLabel.widthAnchor.constraint(equalToConstant: titleLabelWidthAnchor)
-        ]
-        NSLayoutConstraint.activate(skillsLabelConstraints)
         
         // MARK: SKILLS VIEW
-        
-        contentView.addSubview(skillsView)
         skillsView.translatesAutoresizingMaskIntoConstraints = false
-        let skillsViewConstraints = [
-            skillsView.topAnchor.constraint(equalTo: skillsLabel.bottomAnchor, constant: distanceBetweenViews),
-            skillsView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
-            skillsView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -edgeSpacing),
-            skillsView.heightAnchor.constraint(equalToConstant: skillsViewHeightAnchor)
-        ]
-        NSLayoutConstraint.activate(skillsViewConstraints)
+        contentView.addSubview(skillsView)
         
         skillsView.addSubview(skillsHorizontalStackView)
         skillsHorizontalStackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        skillsHorizontalStackView.centerXAnchor.constraint(equalTo: skillsView.centerXAnchor).isActive = true
-        skillsHorizontalStackView.centerYAnchor.constraint(equalTo: skillsView.centerYAnchor).isActive = true
         
         skillsHorizontalStackView.addArrangedSubview(firstSkillsVerticalStackView)
         skillsHorizontalStackView.addArrangedSubview(secondSkillsVerticalStackView)
         
         firstSkillsVerticalStackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        firstSkillsVerticalStackView.leftAnchor.constraint(equalTo: skillsView.leftAnchor, constant: skillsStackViewTopLeft).isActive = true
-        firstSkillsVerticalStackView.topAnchor.constraint(equalTo: skillsView.topAnchor, constant: skillsStackViewTopLeft).isActive = true
         
         firstSkillsVerticalStackView.addArrangedSubview(skillone)
         firstSkillsVerticalStackView.addArrangedSubview(skilltwo)
@@ -583,11 +444,7 @@ extension MainViewController{
         firstSkillsVerticalStackView.addArrangedSubview(skillfive)
         firstSkillsVerticalStackView.addArrangedSubview(skillsix)
         
-        secondSkillsVerticalStackView.rightAnchor.constraint(equalTo: skillsView.rightAnchor, constant: -skillsStackViewTopLeft).isActive = true
-        secondSkillsVerticalStackView.topAnchor.constraint(equalTo: skillsView.topAnchor, constant: skillsStackViewTopLeft).isActive = true
-        
         secondSkillsVerticalStackView.translatesAutoresizingMaskIntoConstraints = false
-        
         secondSkillsVerticalStackView.addArrangedSubview(skillseven)
         secondSkillsVerticalStackView.addArrangedSubview(skilleight)
         secondSkillsVerticalStackView.addArrangedSubview(skillnine)
@@ -596,29 +453,13 @@ extension MainViewController{
         secondSkillsVerticalStackView.addArrangedSubview(skilltwelve)
         
         // MARK: HOBBY LABEL
-        
         contentView.addSubview(hobbyLabel)
-        let hobbyLabelConstraints = [
-            hobbyLabel.topAnchor.constraint(equalTo: skillsView.bottomAnchor, constant: distanceBetweenViews),
-            hobbyLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: titleLabelLeftAnchor),
-            hobbyLabel.heightAnchor.constraint(equalToConstant: titleLabelHeightAnchor),
-            hobbyLabel.widthAnchor.constraint(equalToConstant: titleLabelWidthAnchor)
-        ]
-        NSLayoutConstraint.activate(hobbyLabelConstraints)
         
         // MARK: ARROW IMAGE HOBBY
         arrowImageHobby.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(arrowImageHobby)
-        let arrowImageHobbyConstraints = [
-            arrowImageHobby.topAnchor.constraint(equalTo: skillsView.bottomAnchor, constant: distanceBetweenViews),
-            arrowImageHobby.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -2 * edgeSpacing),
-            arrowImageHobby.heightAnchor.constraint(equalToConstant: titleLabelHeightAnchor),
-            arrowImageHobby.widthAnchor.constraint(equalToConstant: titleLabelHeightAnchor)
-        ]
-        NSLayoutConstraint.activate(arrowImageHobbyConstraints)
         
         // MARK: HOBBY VIEW
-        
         contentView.addSubview(hobbyView)
         hobbyView.translatesAutoresizingMaskIntoConstraints = false
         let hobbyViewConstraints = [
@@ -691,4 +532,177 @@ extension MainViewController{
         
     }
     
+}
+
+extension MainViewController{
+    override func viewWillLayoutSubviews() {
+        // MARK: MENU VIEW CONSTRAINTS
+        let menuConstraints = [
+            menu.topAnchor.constraint(equalToSystemSpacingBelow: view.topAnchor, multiplier: menuTopAnchor),
+            menu.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: menuBottomAnchor),
+            menu.leftAnchor.constraint(equalTo: view.leftAnchor, constant: menuLeftAnchor),
+            menu.rightAnchor.constraint(equalTo: view.rightAnchor, constant: menuRightAnchor)
+        ]
+        NSLayoutConstraint.activate(menuConstraints)
+        
+        // MARK:  CONSTRAINTS
+        let sandwichButtonConstraints = [
+            sandwichButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: sandwichButtonTopAnchor),
+            sandwichButton.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: sandwichButtonHeightWidthAnchor),
+            sandwichButton.heightAnchor.constraint(equalToConstant: sandwichButtonHeightWidthAnchor),
+            sandwichButton.widthAnchor.constraint(equalToConstant: sandwichButtonHeightWidthAnchor)
+        ]
+        NSLayoutConstraint.activate(sandwichButtonConstraints)
+        
+        let closeButtonConstraints = [
+            closeButton.topAnchor.constraint(equalTo: menu.topAnchor, constant: closeButtonTopAnchor),
+            closeButton.rightAnchor.constraint(equalTo: menu.rightAnchor, constant: closeButtonRightAnchor),
+            closeButton.heightAnchor.constraint(equalToConstant: sandwichButtonHeightWidthAnchor),
+            closeButton.widthAnchor.constraint(equalToConstant: sandwichButtonHeightWidthAnchor)
+        ]
+        NSLayoutConstraint.activate(closeButtonConstraints)
+        
+        let aboutLabelConstraints = [
+            aboutLabel.topAnchor.constraint(equalTo: sandwichButton.bottomAnchor, constant: distanceBetweenViews),
+            aboutLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: titleLabelLeftAnchor),
+            aboutLabel.heightAnchor.constraint(equalToConstant: titleLabelHeightAnchor),
+            aboutLabel.widthAnchor.constraint(equalToConstant: titleLabelWidthAnchor)
+        ]
+        NSLayoutConstraint.activate(aboutLabelConstraints)
+        
+        let generalInfoViewConstraints = [
+            generalInfoView.topAnchor.constraint(equalTo: aboutLabel.bottomAnchor, constant: distanceBetweenViews),
+            generalInfoView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
+            generalInfoView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -edgeSpacing),
+            generalInfoView.heightAnchor.constraint(equalToConstant: heightInfoView)
+        ]
+        NSLayoutConstraint.activate(generalInfoViewConstraints)
+        
+        // MARK:  CONSTRAINTS
+        let studiesLabelConstraints = [
+            studiesLabel.topAnchor.constraint(equalTo: generalInfoView.bottomAnchor, constant: distanceBetweenViews),
+            studiesLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: titleLabelLeftAnchor),
+            studiesLabel.heightAnchor.constraint(equalToConstant: titleLabelHeightAnchor),
+            studiesLabel.widthAnchor.constraint(equalToConstant: titleLabelWidthAnchor)
+        ]
+        NSLayoutConstraint.activate(studiesLabelConstraints)
+        
+        let swiftStudiesViewConstraints = [
+            swiftStudiesView.topAnchor.constraint(equalTo: studiesLabel.bottomAnchor, constant: distanceBetweenViews),
+            swiftStudiesView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
+            swiftStudiesView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -edgeSpacing),
+            swiftStudiesView.heightAnchor.constraint(equalToConstant: swiftViewHeight)
+        ]
+        NSLayoutConstraint.activate(swiftStudiesViewConstraints)
+        
+        let swiftStudiesLabelConstraints = [
+            swiftStudiesLabel.topAnchor.constraint(equalTo: swiftStudiesView.topAnchor, constant: studiesViewTitleLabelTopAnchor),
+            swiftStudiesLabel.leftAnchor.constraint(equalTo: swiftStudiesView.leftAnchor, constant: studiesViewLabelsEdgeAnchor),
+            swiftStudiesLabel.heightAnchor.constraint(equalToConstant: studiesViewTitleLabelHeightAnchor),
+            swiftStudiesLabel.rightAnchor.constraint(equalTo: swiftStudiesView.rightAnchor, constant: -studiesViewLabelsEdgeAnchor)
+        ]
+        NSLayoutConstraint.activate(swiftStudiesLabelConstraints)
+        
+        let swiftStudiesInfoLabelConstraints = [
+            swiftStudiesInfoLabel.leftAnchor.constraint(equalTo: swiftStudiesView.leftAnchor, constant: studiesViewLabelsEdgeAnchor),
+            swiftStudiesInfoLabel.topAnchor.constraint(equalTo: swiftStudiesLabel.bottomAnchor, constant: studiesViewLabelTopAnchor),
+            swiftStudiesInfoLabel.rightAnchor.constraint(equalTo: swiftStudiesView.rightAnchor, constant: -studiesViewLabelsEdgeAnchor )]
+        NSLayoutConstraint.activate(swiftStudiesInfoLabelConstraints)
+        
+        let swiftLogoViewConstraints = [
+            swiftLogoView!.bottomAnchor.constraint(equalTo: swiftStudiesView.bottomAnchor, constant: swiftLogoBottomRight),
+            swiftLogoView!.rightAnchor.constraint(equalTo: swiftStudiesView.rightAnchor, constant: swiftLogoBottomRight),
+            swiftLogoView!.heightAnchor.constraint(equalToConstant: swiftLogoWidthHeight),
+            swiftLogoView!.widthAnchor.constraint(equalToConstant: swiftLogoWidthHeight)
+        ]
+        NSLayoutConstraint.activate(swiftLogoViewConstraints)
+        
+        let ceefStudiesViewConstraints = [
+            ceefStudiesView.topAnchor.constraint(equalTo: swiftStudiesView.bottomAnchor, constant: distanceBetweenViews),
+            ceefStudiesView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
+            ceefStudiesView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -edgeSpacing),
+            ceefStudiesView.heightAnchor.constraint(equalToConstant: ceefViewHeight)
+        ]
+        NSLayoutConstraint.activate(ceefStudiesViewConstraints)
+        
+        let ceefStudiesLabelConstraints = [
+            ceefStudiesLabel.topAnchor.constraint(equalTo: ceefStudiesView.topAnchor, constant: studiesViewTitleLabelTopAnchor),
+            ceefStudiesLabel.leftAnchor.constraint(equalTo: ceefStudiesView.leftAnchor, constant: studiesViewLabelsEdgeAnchor),
+            ceefStudiesLabel.heightAnchor.constraint(equalToConstant: studiesViewTitleLabelHeightAnchor),
+            ceefStudiesLabel.rightAnchor.constraint(equalTo: ceefStudiesView.rightAnchor, constant: -studiesViewLabelsEdgeAnchor)
+        ]
+        NSLayoutConstraint.activate(ceefStudiesLabelConstraints)
+        
+        let ceefStudiesInfoLabelConstraints = [
+            ceefStudiesInfoLabel.leftAnchor.constraint(equalTo: ceefStudiesView.leftAnchor, constant: studiesViewLabelsEdgeAnchor),
+            ceefStudiesInfoLabel.topAnchor.constraint(equalTo: ceefStudiesLabel.bottomAnchor, constant: studiesViewLabelTopAnchor),
+            ceefStudiesInfoLabel.rightAnchor.constraint(equalTo: ceefStudiesView.rightAnchor, constant: -studiesViewLabelsEdgeAnchor ),
+            ceefStudiesInfoLabel.bottomAnchor.constraint(equalTo: ceefStudiesView.bottomAnchor, constant: -studiesViewLabelsEdgeAnchor)]
+        NSLayoutConstraint.activate(ceefStudiesInfoLabelConstraints)
+     
+        let experienceLabelConstraints = [
+            experienceLabel.topAnchor.constraint(equalTo: ceefStudiesView.bottomAnchor, constant: distanceBetweenViews),
+            experienceLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: titleLabelLeftAnchor),
+            experienceLabel.heightAnchor.constraint(equalToConstant: titleLabelHeightAnchor),
+            experienceLabel.widthAnchor.constraint(equalToConstant: titleLabelWidthAnchor)
+        ]
+        NSLayoutConstraint.activate(experienceLabelConstraints)
+        
+        let arrowImageExperienceConstraints = [
+            arrowImageExperience.topAnchor.constraint(equalTo: ceefStudiesView.bottomAnchor, constant: distanceBetweenViews),
+            arrowImageExperience.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -2 * edgeSpacing),
+            arrowImageExperience.heightAnchor.constraint(equalToConstant: titleLabelHeightAnchor),
+            arrowImageExperience.widthAnchor.constraint(equalToConstant: titleLabelHeightAnchor)
+        ]
+        NSLayoutConstraint.activate(arrowImageExperienceConstraints)
+        
+        let experienceViewConstraints = [
+            experienceView.topAnchor.constraint(equalTo: experienceLabel.bottomAnchor, constant: distanceBetweenViews),
+            experienceView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
+            experienceView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -edgeSpacing),
+            experienceView.heightAnchor.constraint(equalToConstant: heightExperienceView)
+        ]
+        NSLayoutConstraint.activate(experienceViewConstraints)
+        
+        let skillsLabelConstraints = [
+            skillsLabel.topAnchor.constraint(equalTo: experienceView.bottomAnchor, constant: distanceBetweenViews),
+            skillsLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: titleLabelLeftAnchor),
+            skillsLabel.heightAnchor.constraint(equalToConstant: titleLabelHeightAnchor),
+            skillsLabel.widthAnchor.constraint(equalToConstant: titleLabelWidthAnchor)
+        ]
+        NSLayoutConstraint.activate(skillsLabelConstraints)
+        
+        let skillsViewConstraints = [
+            skillsView.topAnchor.constraint(equalTo: skillsLabel.bottomAnchor, constant: distanceBetweenViews),
+            skillsView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: edgeSpacing),
+            skillsView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -edgeSpacing),
+            skillsView.heightAnchor.constraint(equalToConstant: skillsViewHeightAnchor)
+        ]
+        NSLayoutConstraint.activate(skillsViewConstraints)
+        
+        skillsHorizontalStackView.centerXAnchor.constraint(equalTo: skillsView.centerXAnchor).isActive = true
+        skillsHorizontalStackView.centerYAnchor.constraint(equalTo: skillsView.centerYAnchor).isActive = true
+        
+        firstSkillsVerticalStackView.leftAnchor.constraint(equalTo: skillsView.leftAnchor, constant: skillsStackViewTopLeft).isActive = true
+        firstSkillsVerticalStackView.topAnchor.constraint(equalTo: skillsView.topAnchor, constant: skillsStackViewTopLeft).isActive = true
+        
+        secondSkillsVerticalStackView.rightAnchor.constraint(equalTo: skillsView.rightAnchor, constant: -skillsStackViewTopLeft).isActive = true
+        secondSkillsVerticalStackView.topAnchor.constraint(equalTo: skillsView.topAnchor, constant: skillsStackViewTopLeft).isActive = true
+        
+        let hobbyLabelConstraints = [
+            hobbyLabel.topAnchor.constraint(equalTo: skillsView.bottomAnchor, constant: distanceBetweenViews),
+            hobbyLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: titleLabelLeftAnchor),
+            hobbyLabel.heightAnchor.constraint(equalToConstant: titleLabelHeightAnchor),
+            hobbyLabel.widthAnchor.constraint(equalToConstant: titleLabelWidthAnchor)
+        ]
+        NSLayoutConstraint.activate(hobbyLabelConstraints)
+        
+        let arrowImageHobbyConstraints = [
+            arrowImageHobby.topAnchor.constraint(equalTo: skillsView.bottomAnchor, constant: distanceBetweenViews),
+            arrowImageHobby.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -2 * edgeSpacing),
+            arrowImageHobby.heightAnchor.constraint(equalToConstant: titleLabelHeightAnchor),
+            arrowImageHobby.widthAnchor.constraint(equalToConstant: titleLabelHeightAnchor)
+        ]
+        NSLayoutConstraint.activate(arrowImageHobbyConstraints)
+    }
 }
